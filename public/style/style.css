@@ -1,0 +1,96 @@
+
+.id_card{
+  background-image: url("../images/id-template-front.png");
+  background-size: 400px 270px;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 270px;
+  position: relative;
+}
+.photo{
+  position: absolute;
+  background-image: url("../images/user-photo.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 28%;
+  height: 53.75%;
+  top:31%;
+  left: 5%;
+}
+#card_photo_img{
+  display:block;
+  width: 100%;
+  height: 100%;
+}
+.first_name_div{
+  position: absolute;
+  left: 36.5%;
+  top: 33%;
+}
+input{
+  height: 7%;
+  font-size: 11pt;
+  text-transform:uppercase;
+}
+.last_name_div{
+  position: absolute;
+  left: 36.5%;
+  top: 50%;
+}
+#last_name{
+  font-size: 10pt;
+}
+.nationality_div{
+  position: absolute;
+  left: 36.5%;
+  top: 65%;
+}
+
+.sex_div{
+  position: absolute;
+  left: 56%;
+  top: 65%;
+}
+.person_id_div{
+  position: absolute;
+  left: 65%;
+  top: 65%;
+}
+.birth_date_div{
+  position: absolute;
+  left: 36.5%;
+  top: 80%;
+}
+.expiry_date_div{
+  position: absolute;
+  left: 59.5%;
+  top: 80%;
+}
+.card_id_div{
+  position: absolute;
+  left: 9%;
+  top: 90%;
+}
+#submitButton{
+  background-image: url("../images/verify.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  cursor: pointer;
+  top:90%;
+  left:90%;
+  width: 10%;
+  height: 10%; 
+}
+.choose-photo-div{
+  margin-left: 130px;
+  margin-top: 50px;
+}
+
+.process-button{
+  margin-left: 140px;
+  font-weight: bold;
+  color:white;
+  background-color: green;
+  cursor: pointer;
+}
