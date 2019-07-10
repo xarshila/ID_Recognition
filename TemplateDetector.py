@@ -21,7 +21,6 @@ class TemplateDetector:
         image = query_image
         kp2, des2 = self.akaze.detectAndCompute(image,None)
 
-        # აქ შეგვიძლია უკეთესი მეთობი ვცადოთ
         flann = cv2.BFMatcher(cv2.NORM_HAMMING)
 
         matches = flann.knnMatch(self.template_desc, des2, k=2)

@@ -5,7 +5,6 @@ from ID_CONSTS import *
 from TemplateReader import TemplateReader
 import os
 class IdFrontProcessor:
-
     def __init__(self):
         template = cv2.imread("./id-template-front.png", 0)
         self.template_detector = TemplateDetector(template)

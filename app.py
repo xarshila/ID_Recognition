@@ -35,7 +35,7 @@ def process():
         image = np.asarray(bytearray(image), dtype="uint8")
         image = cv2.imdecode(image, cv2.IMREAD_COLOR)
         reader = IdFrontProcessor()
-        fields = ["photo", "name_ge", "name_en", "last_name_ge", "last_name_en", "person_id", "card_id"]
+        fields = ["photo", "name_ge", "name_en", "last_name_ge", "last_name_en", "person_id", "card_id", "exp_date", "birth_date", "nation", "sex"]
         response = reader.process(image, fields)
         if 'photo' in response:
             success, image_string = cv2.imencode(".png", response["photo"])
