@@ -6,7 +6,6 @@ import matplotlib.pyplot  as plt
 import glob
 import pytesseract as tes
 from PIL import Image
-from passporteye import read_mrz
 
 
 class TemplateDetector:
