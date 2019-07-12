@@ -3,6 +3,7 @@
 
 # How To Run(Docker Image): #
 ```console
+$ sudo docker build -t id-reader:0.0.1 .
 $ sudo docker run -p 8080:8080 -it id-reader:0.0.1
 ```
 ### NOTE: ###

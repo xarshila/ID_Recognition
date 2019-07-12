@@ -4,7 +4,7 @@
 
 #detected_rect{
   width: 95%;
-  max-width: 95%;
+  max-width: 1000px;
   height: 500px;
   margin-right: 50px;
 }
