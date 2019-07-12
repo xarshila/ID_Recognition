@@ -41,3 +41,8 @@ $ wget --post-file=pattern.jpg http://localhost:8080/read
     "sex": "F"
 }
 ```
+
+# Apply Better OCR for High Accuracy #
+in ocr/ocr.py you can put your own OCR processing code (GOOGLE OCR, ABBY OCR, ...)
+just write class with defined manner and assign 
+Ocr = YourOcr

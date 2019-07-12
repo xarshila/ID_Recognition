@@ -20,6 +20,9 @@ class TemplateDetector:
         self.template_keypoints, self.template_desc = self.feature_extractor.detectAndCompute(template,None)
 
     def detect(self, query_image):
+        # Note: Some Parts of this Code is copy pasted from different sources an merged for different functional
+        # I wrote this code after research  pyimagesearch examples
+
         h,w = query_image.shape[:2]
         image_original = query_image
         image = query_image
