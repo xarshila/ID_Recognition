@@ -72,3 +72,6 @@ def process():
 def render_static(page_name):
     return send_from_directory(app.static_folder, page_name)
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080, threaded=True)
+
