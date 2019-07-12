@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/style.css" >
+    <title>Choose your preferences</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/id_card.js">
+</script>
+<div>
+  <div class="div_container">
+    <div>
+      <img id="detected_rect" src="./images/id-template-front.png"/>
+    </div>
+    <div class = "id_card">
+      <form action="/read" method="get">
+        <div class="photo" >
+           <img id="card_photo_img" src = "./images/user-photo.jpg"/>
+        </div>
+        <div class="first_name_div">
+          <img id="field_first_name_ge" />
+          <img id="field_first_name_en" />
+          <br/>
+          <input type="text" size = "18" id = "first_name_ge" name="first_name_ge" />
+          <input type="text" size = "18" id = "first_name_en" name="first_name_en" />
+        </div>
+        <div class="last_name_div">
+          <img id="field_last_name_ge" />
+          <img id="field_last_name_en" />
+          <br/>
+          <input type="text" size = "18" id = "last_name_ge" name="last_name_ge" />
+          <input type="text" size = "18" id = "last_name_en" name="last_name_en" />
+        </div>
+        <div class="nationality_div">
+        <img id="field_nation"/>
+            <br/>
+            <input type="text" size = "3" id = "nationality" name="nationality"/>
+        </div>
+        <div class="sex_div">
+            <img id="field_sex"/>
+            <br/>
+            <input type="text" size = "1" id = "sex" name="sex"/>
+        </div>
+        <div class="person_id_div">
+            <img id="field_person_id"/>
+            <br/>
+            <input type="text" size = "11" id = "person_id" name="person_id" />
+        </div>
+        <div class="birth_date_div">
+          <img id="field_birth_date"/>
+          <br/>
+          <input type="text" size = "8" id = "birth_date" name="birth_date" />
+        </div>
+        <div class="expiry_date_div">
+          <img id="field_exp_date"/>
+          <br/>
+          <input type="text" size = "8" id = "expiry_date" name="expiry_date" />
+        </div>
+        <div class="card_id_div">
+          <img id="field_card_id" />
+          <br/>
+          <input type="text" size = "10" id = "card_id" name="card_id" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="request_area" id="request_area" align="center">
+    <div class="choose-photo-div">
+      <input type="file" name="card-photo" class="card-photo" id="card-photo" />
+    </div>
+    <div>
+      <input type="button" value="process" class="process-button" id="process-button"/>
+    </div>
+  </div>
+</div>
+</body>
+</html>

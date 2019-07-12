@@ -40,7 +40,16 @@ def process():
         if 'photo' in response:
             success, image_string = cv2.imencode(".png", response["photo"])
             if success:
-                response["photo"] =  base64.b64encode(image_string).decode("ascii")
+                response["photo"] = base64.b64encode(image_string).decode("ascii")
+            success, image_string = cv2.imencode(".png", response["detected_rect"])
+            if success:
+                response["detected_rect"] = base64.b64encode(image_string).decode("ascii")
+
+            for field, field_img in response["field"].items():
+                success, image_string = cv2.imencode(".png", field_img)
+                if success:
+                    response["field"][field] = base64.b64encode(image_string).decode("ascii")
+
         response_code = 200
         
     except Exception as exp:

@@ -1,0 +1,2 @@
+Requirement already satisfied: opencv-contrib-python in /home/xarshila/anaconda3/lib/python3.6/site-packages (3.4.0.12)
+Requirement already satisfied: numpy>=1.11.3 in /home/xarshila/anaconda3/lib/python3.6/site-packages (from opencv-contrib-python) (1.16.1)

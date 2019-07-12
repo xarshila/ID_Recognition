@@ -65,7 +65,3 @@ ID_FRONT_CONSTS = {
         "config": "-c tessedit_char_whitelist=1234567890. --psm 8"  
     },
 }
-
-ID_BACK_CONSTS = {
-    
-}

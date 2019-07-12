@@ -1,11 +1,20 @@
+.div_container{
+  display: flex;
+}
 
+#detected_rect{
+  width: 600px;
+  height: 500px;
+  margin-right: 50px;
+}
 .id_card{
   background-image: url("../images/id-template-front.png");
-  background-size: 400px 270px;
+  background-size: 650px 500px;
   background-repeat: no-repeat;
-  width: 400px;
-  height: 270px;
+  width: 650px;
+  height: 500px;
   position: relative;
+  display: flex;
 }
 .photo{
   position: absolute;
@@ -53,7 +62,7 @@ input{
 }
 .person_id_div{
   position: absolute;
-  left: 65%;
+  left: 67%;
   top: 65%;
 }
 .birth_date_div{
@@ -83,14 +92,76 @@ input{
   height: 10%; 
 }
 .choose-photo-div{
-  margin-left: 130px;
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .process-button{
-  margin-left: 140px;
+  margin-left: -100px;
   font-weight: bold;
   color:white;
   background-color: green;
   cursor: pointer;
+}
+
+
+#field_first_name_ge{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+#field_first_name_en{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  margin-left: 50%;
+}
+
+#field_last_name_ge{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+
+#field_last_name_en{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  margin-left: 50%;
+}
+
+#field_card_id{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+}
+
+
+#field_person_id{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+}
+
+#field_sex{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+}
+
+#field_birth_date{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+}
+
+#field_exp_date{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+}
+
+#field_nation{
+  position: absolute;
+  width: 100%;
+  height: 50%;
 }

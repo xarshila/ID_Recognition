@@ -19,6 +19,7 @@ class IdFrontProcessor:
         detected = self.template_detector.detect(image)
         reader = TemplateReader(detected["warp"])
         result = reader.readSegments(segments)
+        result["detected_rect"] = detected["detected_rect"]
         return result
 
    
