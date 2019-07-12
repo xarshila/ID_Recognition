@@ -43,8 +43,12 @@ WORKDIR /
 
 # Upgrade pip
 RUN python3.6 -m pip install --upgrade pip
+RUN pip uninstall opencv-python
+RUN pip uninstall opencv-contribi-python
 # Install python requirements
 RUN python3.6 -m pip install -r /requirements/requirements.txt
+
+
 
 # Install tesseract geo language
 RUN apt-get install -y tesseract-ocr-kat
