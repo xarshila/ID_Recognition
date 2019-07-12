@@ -20,7 +20,7 @@ class TemplateDetector:
         self.template_keypoints, self.template_desc = self.feature_extractor.detectAndCompute(template,None)
 
     def detect(self, query_image):
-        h,w = query_image.shape
+        h,w = query_image.shape[:2]
         image_original = query_image
         image = query_image
         kp2, des2 = self.feature_extractor.detectAndCompute(image,None)
@@ -49,7 +49,7 @@ class TemplateDetector:
         h,w = self.template.shape
         pts = np.float32([ [0,0],[0,h-1],[w-1,h-1],[w-1,0] ]).reshape(-1,1,2)
         dst = cv2.perspectiveTransform(pts,M)
-        depth = int(3 * (min(w,h)/800))
+        depth = int(3 * (min(w,h)/400))
         detected_rect = cv2.polylines(image,[np.int32(dst)],True,255,depth, cv2.LINE_AA)
 
         result_warp = cv2.warpPerspective(image_original, np.linalg.inv(M), (w, h))
