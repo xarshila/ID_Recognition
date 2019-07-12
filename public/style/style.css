@@ -3,15 +3,15 @@
 }
 
 #detected_rect{
-  width: 600px;
+  width: 95%;
   height: 500px;
   margin-right: 50px;
 }
 .id_card{
   background-image: url("../images/id-template-front.png");
-  background-size: 650px 500px;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 650px;
+  width: 95%;
   height: 500px;
   position: relative;
   display: flex;

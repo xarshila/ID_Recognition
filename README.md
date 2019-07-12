@@ -20,7 +20,10 @@ NOTE:
     modules (flask, tesseract, tesseract-ka, opencv, and so...)  
 
 # How To USE: #
-[to do]
+### wget: ###
+```console
+$ wget --post-file=pattern.jpg http://localhost:8080/read
+```
 
 # Response: #
 ```
@@ -29,5 +32,11 @@ NOTE:
     "name_ge": "სახელი",
     "last_name_en": "GVARI",
     "last_name_ge": "გვარი"
+    "birth_date": "23.05.1967", 
+    "card_id": "", 
+    "exp_date": "1511212021",
+    "nation": "GEO", 
+    "person_id": "", 
+    "sex": "F"
 }
 ```

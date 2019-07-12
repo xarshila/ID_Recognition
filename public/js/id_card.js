@@ -31,7 +31,7 @@ function read_id_card(){
         image: image_data
     }
     form_data = new FormData()
-    form_data.append("fields", ["name_en", "name_ge", "birth_date", "exp_date"])
+    form_data.append("debug", true)
     form_data.append("image", image_data)
     $("#id_card_div").hide()
     $.ajax({

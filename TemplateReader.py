@@ -4,12 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 class TemplateReader:
 
-    def __init__(self, template):
+    def __init__(self, template, debug=False):
+        self.debug = debug
         self.template = template
         
     def readSegments(self, segments):
         result = {}
-        result["field"] = {}
+        if self.debug:
+            result["field"] = {}
         for name in segments:
             segment = segments[name]
             segment_img = self.template[segment['y1'] : segment['y2'], segment['x1']  : segment['x2']]
@@ -21,10 +23,12 @@ class TemplateReader:
                 config = ""
                 if "config" in segment:
                     config = segment["config"]
-                segment_text = tes.image_to_string(segment_img_gray, lang = segment["lang"], config = config)
+                segment_text = tes.image_to_string(segment_img_thresh, lang = segment["lang"], config = config)
                 result[name] = segment_text
-                result["field"][name] = segment_img
+                if self.debug:
+                    result["field"][name] = segment_img
                 
             else:
-               result[name] = segment_img
+                if self.debug:
+                    result[name] = segment_img
         return result;

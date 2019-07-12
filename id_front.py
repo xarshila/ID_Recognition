@@ -5,7 +5,8 @@ from ID_CONSTS import *
 from TemplateReader import TemplateReader
 import os
 class IdFrontProcessor:
-    def __init__(self):
+    def __init__(self, debug=False):
+        self.debug = debug
         template = cv2.imread("./id-template-front.png", 0)
         self.template_detector = TemplateDetector(template)
         self.segment_consts = ID_FRONT_CONSTS
@@ -17,9 +18,10 @@ class IdFrontProcessor:
         for field in fields:
             segments[field] = self.segment_consts[field]
         detected = self.template_detector.detect(image)
-        reader = TemplateReader(detected["warp"])
+        reader = TemplateReader(detected["warp"], debug=self.debug)
         result = reader.readSegments(segments)
-        result["detected_rect"] = detected["detected_rect"]
+        if self.debug:
+            result["detected_rect"] = detected["detected_rect"]
         return result
 
    

@@ -25,22 +25,28 @@ def health():
 @app.route('/read', methods=["Post"])
 def process():
     response_err = "Bad Request"
+    debug = False
     try:
         image = None
-        image = request.files["image"].read()
+        image = request.get_data()
+        if "image" in request.files:
+            image = request.files["image"].read()
         if not image:
             response_err = "Image is Empty"
             raise Exception()
-
+        if "debug" in request.form:
+            debug = True
         image = np.asarray(bytearray(image), dtype="uint8")
         image = cv2.imdecode(image, cv2.IMREAD_COLOR)
-        reader = IdFrontProcessor()
+        reader = IdFrontProcessor(debug=debug)
         fields = ["photo", "name_ge", "name_en", "last_name_ge", "last_name_en", "person_id", "card_id", "exp_date", "birth_date", "nation", "sex"]
         response = reader.process(image, fields)
-        if 'photo' in response:
-            success, image_string = cv2.imencode(".png", response["photo"])
-            if success:
-                response["photo"] = base64.b64encode(image_string).decode("ascii")
+        if debug:
+            if 'photo' in response:
+                success, image_string = cv2.imencode(".png", response["photo"])
+                if success:
+                    response["photo"] = base64.b64encode(image_string).decode("ascii")
+
             success, image_string = cv2.imencode(".png", response["detected_rect"])
             if success:
                 response["detected_rect"] = base64.b64encode(image_string).decode("ascii")
@@ -57,7 +63,6 @@ def process():
         image = None
         response = response_err
         response_code = 400
-
 
     return jsonify(response), response_code
 
