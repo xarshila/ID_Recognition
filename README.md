@@ -47,7 +47,14 @@ in ocr/ocr.py you can put your own OCR processing code (GOOGLE OCR, ABBY OCR, ..
 just write class with defined manner and assign 
 Ocr = YourOcr
 
-# Accurary Using Tesseract(worst ocr) #
+
+# Detection Accuracy
+detection = prefect detection / number of examples
+```
+detection accuracy: 87%
+```
+
+# Accurary Using Tesseract(worst ocr generally but best  between free and open-source ocrs) #
 run over 108 labeled example.
 ```
 {
@@ -63,3 +70,5 @@ run over 108 labeled example.
     "last_name_en": 0.26851851851851855
 }
 ```
+
+
