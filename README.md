@@ -46,3 +46,20 @@ $ wget --post-file=pattern.jpg http://localhost:8080/read
 in ocr/ocr.py you can put your own OCR processing code (GOOGLE OCR, ABBY OCR, ...)
 just write class with defined manner and assign 
 Ocr = YourOcr
+
+# Accurary Using Tesseract(worst ocr) #
+run over 108 labeled example.
+```
+{
+    "name_ge": 0.4351851851851852,
+    "name_en": 0.39814814814814814,
+    "last_name_ge": 0.4444444444444444,
+    "nation": 0.4444444444444444,
+    "sex": 0.5277777777777778,
+    "person_id": 0.25,
+    "card_id": 0.08333333333333333,
+    "exp_date": 0.1388888888888889,
+    "birth_date": 0.2037037037037037,
+    "last_name_en": 0.26851851851851855
+}
+```
